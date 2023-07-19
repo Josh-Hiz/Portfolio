@@ -1,4 +1,4 @@
-import '../css/style.css';
+import '/css/page_css/index.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { CameraHelper, Euler, Int8Attribute, MeshBasicMaterial, Quaternion } from 'three';
@@ -22,7 +22,6 @@ import { CameraHelper, Euler, Int8Attribute, MeshBasicMaterial, Quaternion } fro
 //Make sure the cube generation does not interfere with globe
 
 //LIGHTING IS DEAD LAST
-
 var SEPERATION = 50, AMOUNTX = 60, AMOUNTY = 30;
 var particles, particle, count = 0;
 
@@ -99,7 +98,7 @@ function randomStar(){
   const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
   const star = new THREE.Mesh(geometry, starMaterial);
 
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(1000));
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(500));
   star.position.set(x,y,z);
   star.userData.rx = Math.random() * 0.01 - 0.005;
   star.userData.ry = Math.random() * 0.01 - 0.005;
@@ -114,11 +113,11 @@ Array(1500).fill().forEach(randomStar);
 // scene.add(gridHelper);
 
 //Allow free scroll (Will be removed when all geometry is set up)
-var controls = new OrbitControls(camera, renderer.domElement);
-controls.minPolarAngle = Math.PI/2;
-controls.maxPolarAngle = Math.PI/2;
-controls.minDistance = 50;
-controls.maxDistance = 0;
+// var controls = new OrbitControls(camera, renderer.domElement);
+// controls.minPolarAngle = Math.PI/2;
+// controls.maxPolarAngle = Math.PI/2;
+// controls.minDistance = 50;
+// controls.maxDistance = 0;
 
 
 //Animate Atom
@@ -140,7 +139,7 @@ const animate = function() {
     torusTwo.rotation.x += 0.005
 
     globe.rotation.y += 0.001
-    controls.update();
+    // controls.update();
   
     renderer.render(scene, camera);
   }
