@@ -7,13 +7,13 @@
     "serve": "vite preview --port 8080"
   },
   "devDependencies": {
-    "terser": "^5.19.1",
     "vite": "^2.9.16"
   },
   "dependencies": {
     "bootstrap": "^3.4.1",
     "font-awesome": "^4.7.0",
     "postcss": "^8.4.16",
+    "rollup-plugin-terser": "^7.0.2",
     "scroll-out": "^2.2.12",
     "three": "^0.133.1",
     "webkit-npm": "^3.1.1"
