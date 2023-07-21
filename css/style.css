@@ -30,6 +30,7 @@ canvas#background {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    flex-wrap: wrap;
   }
   
   .links a {
@@ -45,7 +46,7 @@ canvas#background {
   
   .logo img{
     height: 60px;
-    width:auto;
+    width:200px;
   }
 /*---------------------------------------*/
 /*CSS for inline line*/
