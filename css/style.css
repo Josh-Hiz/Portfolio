@@ -46,8 +46,8 @@ canvas#background {
   }
   
   .logo img{
-    height: 60px;
-    width:auto;
+    width:320px;
+    height:360
   }
 /*---------------------------------------*/
 /*CSS for inline line*/
