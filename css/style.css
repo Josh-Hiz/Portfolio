@@ -2,10 +2,11 @@
 
 @font-face {
   font-family: 'Elianto';
+  font-weight: normal;
   src: url('/assets/fonts/elianto-regular-webfont.woff2') format('woff2'),
        url('/assets/fonts/elianto-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap;
+
 }
 
 :root {
@@ -43,7 +44,8 @@ canvas#background {
   }
   
   .logo img{
-    height: 60px
+    height: 60px;
+    width:auto;
   }
 /*---------------------------------------*/
 /*CSS for inline line*/

@@ -1,23 +1,12 @@
 import '../css/style.css'
-
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { CameraHelper, Euler, Int8Attribute, MeshBasicMaterial, Quaternion } from 'three';
+import {  MeshBasicMaterial } from 'three';
+import { randomStar, addResizeListener } from './utils.js';
 
 //LIGHTING IS DEAD LAST
-var SEPERATION = 50, AMOUNTX = 60, AMOUNTY = 30;
-var particles, particle, count = 0;
+var particles
 
 particles = new Array();
-
-var PI2 = Math.PI * 2;
-var waveMaterial = new THREE.SpriteMaterial( {
-    color: 0xffffff,
-    program: function ( context ) {
-      context.beginPath();
-    }
-})
-
 
 const scene = new THREE.Scene(); //Add new scene
 
@@ -74,40 +63,8 @@ scene.add(innerGlobe);
 
 const starGroup = new THREE.Group();
 scene.add(starGroup);
+Array(1500).fill().forEach(() => randomStar(starGroup));
 
-//Add stars (Will start out with a test of spheres first, then cubes)
-function randomStar(){
-  const geometry = new THREE.TorusGeometry(0.5,0.2,3,100);
-  const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
-  const star = new THREE.Mesh(geometry, starMaterial);
-
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(500));
-  star.position.set(x,y,z);
-  star.userData.rx = Math.random() * 0.01 - 0.005;
-  star.userData.ry = Math.random() * 0.01 - 0.005;
-  star.userData.rz = Math.random() * 0.01 - 0.005;
-  starGroup.add(star);
-}
-Array(1500).fill().forEach(randomStar);
-
-
-//Create Grid Helper (Will be removed when geometry is setup)
-// const gridHelper = new THREE.GridHelper(200,50);
-// scene.add(gridHelper);
-
-//Allow free scroll (Will be removed when all geometry is set up)
-// var controls = new OrbitControls(camera, renderer.domElement);
-// controls.minPolarAngle = Math.PI/2;
-// controls.maxPolarAngle = Math.PI/2;
-// controls.minDistance = 50;
-// controls.maxDistance = 0;
-
-function getRandomInt(min,max) {
-  return Math.floor(Math.random() * (max-min)) + min;
-}
-const torusOneSpeed = getRandomInt(1,2);
-const torusTwoSpeed = getRandomInt(1,2);
-const torusSpeed = getRandomInt(1,2);
 //Animate Atom
 const animate = function() {
     requestAnimationFrame( animate );
@@ -119,24 +76,18 @@ const animate = function() {
 
     });
 
-    torus.rotation.y += 0.005 * torusSpeed;
-    torus.rotation.x += 0.015 * torusSpeed;
+    torus.rotation.y += 0.005 ;
+    torus.rotation.x += 0.015 ;
 
-    torusOne.rotation.x += 0.010 * torusOneSpeed;
-    torusOne.rotation.y += 0.005 * torusOneSpeed;
-    torusTwo.rotation.y+= 0.005 * torusTwoSpeed;
-    torusTwo.rotation.x += 0.005 * torusTwoSpeed;
+    torusOne.rotation.x += 0.010;
+    torusOne.rotation.y += 0.005;
+    torusTwo.rotation.y+= 0.005;
+    torusTwo.rotation.x += 0.005;
 
     globe.rotation.y += 0.001
-    // controls.update();
   
     renderer.render(scene, camera);
   }
    animate();
 
-window.addEventListener('resize', function(){
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-});
-
+addResizeListener(renderer, camera);

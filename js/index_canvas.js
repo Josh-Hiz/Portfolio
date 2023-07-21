@@ -1,7 +1,8 @@
 import '../css/style.css'
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { CameraHelper, Euler, Int8Attribute, MeshBasicMaterial, Quaternion } from 'three';
+import { MeshBasicMaterial } from 'three';
+import { randomStar, addResizeListener } from './utils.js';
+var particles
 
 //Author: Josh H 
 // MIT License 
@@ -21,20 +22,7 @@ import { CameraHelper, Euler, Int8Attribute, MeshBasicMaterial, Quaternion } fro
 //Rotate each generated cube in a random x, y, and z direction 
 //Make sure the cube generation does not interfere with globe
 
-//LIGHTING IS DEAD LAST
-var SEPERATION = 50, AMOUNTX = 60, AMOUNTY = 30;
-var particles, particle, count = 0;
-
 particles = new Array();
-
-var PI2 = Math.PI * 2;
-var waveMaterial = new THREE.SpriteMaterial( {
-    color: 0xffffff,
-    program: function ( context ) {
-      context.beginPath();
-    }
-})
-
 
 const scene = new THREE.Scene(); //Add new scene
 
@@ -50,8 +38,6 @@ camera.position.setZ(50);
 camera.position.setY(0); 
 
 renderer.render(scene, camera);
-
-//Create a quick background for a basic atmosphere 
 
 //Create thin white torus's for atom (We need 3)
 const geometry = new THREE.TorusGeometry(15,0.4,3,100);
@@ -91,34 +77,7 @@ scene.add(innerGlobe);
 
 const starGroup = new THREE.Group();
 scene.add(starGroup);
-
-//Add stars (Will start out with a test of spheres first, then cubes)
-function randomStar(){
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const starMaterial = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
-  const star = new THREE.Mesh(geometry, starMaterial);
-
-  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(500));
-  star.position.set(x,y,z);
-  star.userData.rx = Math.random() * 0.01 - 0.005;
-  star.userData.ry = Math.random() * 0.01 - 0.005;
-  star.userData.rz = Math.random() * 0.01 - 0.005;
-  starGroup.add(star);
-}
-Array(1500).fill().forEach(randomStar);
-
-
-//Create Grid Helper (Will be removed when geometry is setup)
-// const gridHelper = new THREE.GridHelper(200,50);
-// scene.add(gridHelper);
-
-//Allow free scroll (Will be removed when all geometry is set up)
-// var controls = new OrbitControls(camera, renderer.domElement);
-// controls.minPolarAngle = Math.PI/2;
-// controls.maxPolarAngle = Math.PI/2;
-// controls.minDistance = 50;
-// controls.maxDistance = 0;
-
+Array(1500).fill().forEach(() => randomStar(starGroup));
 
 //Animate Atom
 const animate = function() {
@@ -139,14 +98,9 @@ const animate = function() {
     torusTwo.rotation.x += 0.005
 
     globe.rotation.y += 0.001
-    // controls.update();
   
     renderer.render(scene, camera);
   }
    animate();
 
-window.addEventListener('resize', function(){
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-});
+addResizeListener(renderer, camera);
