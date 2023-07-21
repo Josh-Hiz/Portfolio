@@ -123,12 +123,15 @@ a {
 }
 
 .index-title-header {
+  text-align: center;
+  margin-bottom: 100px;
+  margin-left: 50px;
   font-size: 25px;
-  width: 35%;
+  min-width: 30%;
+  max-width: 35%;
   border-radius: 25px;
-  background-color: var(--dark-bg);
+  background-color: rgba(15, 15, 15, 0.95);
   padding: 1rem;
-  margin-bottom: 50px;
 }
 
 ul {
@@ -154,6 +157,33 @@ li {
   padding: 20px;
   border-radius: 25px;
   background-color: var(--dark-bg);
+}
+/* Add Responsive CSS */
+@media (max-width: 1250px) {
+  .main {
+    padding: 20px;
+  }
+
+  .index-section-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .index-title-header {
+    margin: 20px 0;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .index-section-body p {
+    text-align: center;
+  }
+
+  .index-section-flex-child {
+    margin-bottom: 20px;
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
 /*----------------------------------------*/
 /*about.css*/
