@@ -1,9 +1,13 @@
+import { threeMinifier } from "@yushijinhun/three-minifier-rollup";
 // vite.config.js
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 const root = resolve(__dirname, './')
 const outDir = resolve(__dirname, 'dist')
 export default defineConfig({
+  plugins: [
+		{ ...threeMinifier(), enforce: "pre" } 
+	],
   root,
   build: {
     outDir,
