@@ -18,6 +18,7 @@ export default defineConfig({
         contacts: resolve(root, 'pages/contacts','index.html'),
         about: resolve(root, 'pages/about','index.html'),
         projects: resolve(root, 'pages/projects','index.html'),
+        webring: resolve(root, 'pages/webring','index.html'),
       },
     },
   },
