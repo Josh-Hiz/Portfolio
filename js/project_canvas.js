@@ -49,7 +49,7 @@ const innerTorus = new THREE.Mesh( innerRing, outerMaterial );
 const thirdRing = new THREE.TorusGeometry(20,2,30,3,6.283185307179586);
 const thirdTorus = new THREE.Mesh( thirdRing, outerMaterial );
 
-scene.add( torus );
+
 scene.add( innerTorus );
 scene.add( thirdTorus );
 //Add Globe/Sphere(s)
