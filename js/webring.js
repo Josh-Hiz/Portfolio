@@ -6,17 +6,19 @@
  * <script id="webring" src="https://sitring.eric.si/js/webring.js?id=YOUR_ID_HERE"></script>
  * Make sure in ur html file you have a div with the id "ring" to place the webring in
  */
+// Allocate memory to make arrays
 var ring = [];
 var ringLinks = [];
-
 
 function getQuery() {
     return document.getElementById("webringjs").src.split("id=")[1]
 }
 
 async function getRandomNeighbors() {
+    // Use let for efficent memory allocation
+    let id = getQuery();
     try {
-        const response = await fetch("https://sitring.eric.si/eric/random", {
+        const response = await fetch(`https://sitring.eric.si/${id}/random`, {
             method: 'GET',
         });
         const randomNeighbor = await response.json();
@@ -27,6 +29,7 @@ async function getRandomNeighbors() {
 }
 
 async function getNeighbors() {
+    // Use let for efficent memory allocation
     let id = getQuery();
     try {
         const response = await fetch(`https://sitring.eric.si/${id}/neighbors`, {
