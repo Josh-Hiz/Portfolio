@@ -35,8 +35,6 @@ canvas#background {
   
   .links a {
   margin-top: 10px;
-  margin-left:10px; 
-  margin-right:10px;
   text-decoration: none;
   color: #f2f2f2;
   text-decoration: none;
@@ -381,3 +379,22 @@ text-align: left;
     max-width: 100%;
   }
 }
+
+.webring-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  background-color: var(--dark-bg);
+  font-size: small;
+}
+
+.webring-index {
+  text-align: center;
+}
+
+.webring-index a {
+  text-decoration: none;
+}
+
+/*projects.css*/
