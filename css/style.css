@@ -384,7 +384,7 @@ text-align: left;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 2.5rem; 
+  height: 3.0rem; 
   background-color: var(--dark-bg);
   font-size: small;
   left: 0;
@@ -397,5 +397,7 @@ text-align: left;
 .webring-index a {
   text-decoration: none;
 }
+
+
 
 /*projects.css*/
