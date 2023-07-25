@@ -387,6 +387,7 @@ text-align: left;
   height: 2.5rem; 
   background-color: var(--dark-bg);
   font-size: small;
+  left: 0;
 }
 
 .webring-index {
