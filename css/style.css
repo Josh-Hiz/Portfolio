@@ -407,7 +407,7 @@ text-align: left;
 .project-title-header {
   text-align: center;
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   margin-left: 100px;
   font-size: 25px;
   min-width: 30%;
@@ -447,7 +447,7 @@ text-align: left;
 
 @media (max-width: 1250px) {
   .project {
-      flex-basis: 50%;
+      flex-basis: 100%;
       margin-bottom: 1rem;
   }
   .project:last-child {

@@ -57,7 +57,7 @@ const globe = new THREE.Mesh(globeGeometry,globeMaterial);
 scene.add(globe);
 
 const innerCircle = new THREE.SphereGeometry(3.25,25,9);
-const innerMaterial = new THREE.MeshBasicMaterial({color: 0xFFA500, wireframe: false, transparent: true, opacity: 0.7});
+const innerMaterial = new THREE.MeshBasicMaterial({color: 0xD3D3D3, wireframe: false, transparent: true, opacity: 0.7});
 const innerGlobe = new THREE.Mesh(innerCircle, innerMaterial);
 scene.add(innerGlobe);
 
