@@ -14,9 +14,10 @@
     <link rel="icon" type="image/gif" href="/assets/icons/da2bqyh-a6bc60a5-52b6-4b34-9296-ea6d4b82e1f4.gif">
     <link rel="stylesheet" href="/css/style.css">
     <script type="module" src="/js/project_canvas.js"></script>
-    <!-- <script type="module" src="https://sitring.eric.si/webring.js?id=josh_h" id="webringjs"></script> -->
+    <script type="module" src="https://sitring.eric.si/webring.js?id=josh_h" id="webringjs"></script>
     <title>Projects</title>
   </head>
+
 
   <canvas id="background"> </canvas> 
 
@@ -31,7 +32,6 @@
       <a href="/pdf/Joshua_Hizgiaev_Resume.pdf" aria-label="My resume">Resume</a>
     </div>
   </div>
-
   <div class="project-body">
     <header class="project-title-header">
       <h1 class="subtitle">My Favorite Projects</h1>
@@ -40,42 +40,110 @@
   <section class="project-section">
     <div class="project">
       <h2>SGB-Courses</h2>
-      <p>Project description...</p>
-      <a href="https://github.com/mgree/SGBCourses" target="_blank">View Project</a>
+      <p>
+        Sphinx-Greenberg-Courses is a completely client-side web application designed to 
+        teach graduate students introduction to computer science. This course is taught at 
+        Stevens Institute of Technology under Professor Greenberg to over 50-100+ talented 
+        graduate students interested in Computer Science. The main goal for this website was 
+        to provide a template for other computer science courses to follow, meant to replace 
+        popular (but highly disliked) paid tools like ZyBooks. The client-side application is 
+        built off Static Site Generation, specifically using Sphinx, using WASM to build tools 
+        such as an interactive Python IDE to run test scripts and tools to build interactive 
+        quizzes for students to take!
+      </p>
+      <h3>Skills:</h3>
+      <p>HTML/CSS, JavaScript, Bootstrap, Python, Git, GitHub, GitHub Pages, Sphinx, Web Development</p>
+      <a class="inline-link" href="https://github.com/mgree/SGBCourses" target="_blank">View Project</a>
     </div>
     <div class="project">
       <h2>StockoBot</h2>
-      <p>Project description...</p>
-      <a href="https://github.com/Josh-Hiz/StockoBot" target="_blank">View Project</a>
+      <p>
+        A Python financial/quantitative statistics bot designed to give discord users 
+        near unlimited access to key financial data and statistical models to view. 
+        Features include:
+      </p>
+      <li>Graphing and plotting of any historical stock price from 1970 to the present including a full MACD!</li>
+      <li>Graphing and plotting of any historical volatility data from 1970</li>
+      <li>Graphing and plotting of any appropriate ratio you would need from a stock! (Sharpe, M2, etc)</li>
+      <li>Real-time stock tickers with accurate price data of a specific stock including: Open, Close, High, Low, and Volume with real-time updates from yahoo finance!</li>
+      <li>Stock options chain for both call and put with a compehensive table for easy viewing</li>
+      <li>Graphing and plotting of stock RSI, all 3 Bollinger Bands, and VWAP of a stock</li>
+      <h3>Skills:</h3>
+      <p>Python, Quantitative Statistics, Pandas, Data Analysis, Numpy, Yahoo Finance, Google Finance, Matplotlib, Plotly</p>
+      <a class="inline-link" href="https://github.com/Josh-Hiz/StockoBot" target="_blank">View Project</a>
     </div>
     <div class="project">
       <h2>StockoDash</h2>
-      <p>Project description...</p>
-      <a href="https://github.com/Josh-Hiz/StockDash" target="_blank">View Project</a>
+      <p>
+        This project is currently in progress and production build has not been released. 
+        But this will be one of my most impressive (and ambitious) projects so far. Stockodash 
+        is a full stack Plotly-Dash/Django web application designed to give users an accurate 
+        analysis of their financial portfolio. Similar to Morningstar's porfolio XRay, except 
+        this will be free and open-source to all! No longer will you need to use a complex paid 
+        subscription service when all you have to do is login to mine, input your porfolio data, 
+        and see the same statistics any paid tool will give you!
+      </p>
+      <h3>Skills:</h3>
+      <p>Python, Django, SQL, Portfolio Analysis, Statistics, Machine Learning, PyTorch, HTML/CSS, JavaScript, Web Development</p>
+      <a class="inline-link" href="https://github.com/Josh-Hiz/StockDash" target="_blank">View Project (Not finished!)</a>
     </div>
     <div class="project">
       <h2>Burning Glass Analysis</h2>
-      <p>Project description...</p>
-      <a href="https://github.com/Josh-Hiz/BurningGlassAnalysis" target="_blank">View Project</a>
+      <p>
+        Burning Glass Analysis was the key quantitative analysis for my research project for my 
+        Undergraduate Research internship for the summer! The main objective for my summer research 
+        was to analyze the growth of data science skills in the US job market using data from 2007 
+        to 2021. This is actually part 2 of my overall research, my previous analysis utilized ONET's
+        job task's and analyze the growth of task categories among U.S. jobs. However Burning Glass is 
+        a much more accurate and comprehensive dataset, and therefore I was able to analyze the true growth
+        of data science skills in the U.S. job market. This project was done in collaboration with Dr. Jeffery Nickerson 
+        of Stevens Institute of Technology and research on Generative AI and growth of AI in general. I in terms of
+        size of of data I was able to query about 26 million rows of job advertisements and skill data using PostGreSQL
+        and provided my full analysis of it in an extremely long Jupyter Notebook. After my internship was over I submitted
+        my research to Dr. Nickerson with the goal of looking into the analysis and growth of Machine Learning skills in the
+        U.S. job market.
+      </p>
+      <h3>Skills:</h3>
+      <p>Python, Pandas, Data Analysis, PostgreSQL, Jupyter Notebook, Data Visualization, Matplotlib, Plotly, Seaborn, Scipy, Numpy</p>
+      <a class="inline-link" href="https://github.com/Josh-Hiz/BurningGlassAnalysis" target="_blank">View Project</a>
     </div>
     <div class="project">
       <h2>A-Star and Dijkstra Algorithm Visualizer</h2>
-      <p>Project description...</p>
-      <a href="https://github.com/Josh-Hiz/PathfindingVisualizer" target="_blank">View Project</a>
+      <p>
+        A Java Swing and Java AWT application designed to give a full visualization of both the popular
+        A-Star and Dijkstra pathfinding algorithms. The application allows the user to create their own
+        maze and then run the algorithm to find the shortest path from the start to the end. The application
+        also allows the user to change the speed of the algorithm and the size of the grid. This is the first
+        project that got me into visualzing algorithms and I am very proud of it! This would later motivate me to create
+        both my 2D Cellular Automata Visualizer and my Sorting Algorithm Visualizer Projects!
+      </p>
+      <h3>Skills:</h3>
+      <p>Java, Java AWT, Java Swing, Data Structures and Algorithms, Visualzation, GUI Development</p>
+      <img src="/assets/gifs/Screen Recording 2023-08-08 at 7.18.58 PM.gif">
+      <br>
+      <a class="inline-link" href="https://github.com/Josh-Hiz/PathfindingVisualizer" target="_blank">View Project</a>
     </div>
     <div class="project">
       <h2>2D Cellular Automata Visualizer</h2>
-      <p>Project description...</p>
-      <a href="https://github.com/Josh-Hiz/CellularAutomata2D" target="_blank">View Project</a>
+      <p>
+        A C++ SFML application designed to give a full visualization of 2D Cellular Automata. The application
+        allows the user to create their own 2D Cellular Automata and then run the simulation to see the results.
+        The application also allows the user to change the speed of the simulation and the size of the grid. This
+        project was inspired by my A-Star and Dijkstra Algorithm Visualizer and I wanted to create a similar project, it also
+        helped me learn C++ and SFML! Additionally you can create your own patterns to simulate and see the results!
+      </p>
+      <h3>Skills:</h3>
+      <p>C/C++, SFML, Cellular Automata, Data Structures and Algorithms, Visualzation, GUI Development, Conways Game of Life</p>
+      <img src="/assets/gifs/Screen Recording 2023-08-08 at 7.59.18 PM.gif">
+      <br>
+      <a class="inline-link" href="https://github.com/Josh-Hiz/CellularAutomata2D" target="_blank">View Project</a>
     </div>
   </section>
-
   </div>
 
-
-  <!-- <footer class="webring-footer">
+  <!-- <div class="webring-footer">
     <div class="webring-index" id="webring">
     </div>
-  </footer> -->
+  </div> -->
 
 </html>
